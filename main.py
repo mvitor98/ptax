@@ -24,8 +24,7 @@ if __name__ == "__main__":
         "end_date": args.endDate,
         "date": args.date
     }
-
-    
+ 
     start_date = dates.get("start_date")
     end_date = dates.get("end_date")
     date = dates.get("date")
