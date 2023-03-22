@@ -20,13 +20,3 @@ class Ptax:
         url = self.__base_url + endpoint + query
         response = rq.get(url)
         return pd.DataFrame(response.json().get("value"))
-
-
-if __name__ == "__main__":
-    
-    date = "10-14-2022"
-
-    ptax = Ptax()
-    day = ptax.get_day_ptax(date)
-    period = ptax.get_period_ptax(start_date= "10-01-2022", end_date= "10-31-2022")
-    print(*period, sep= "\n")

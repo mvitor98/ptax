@@ -48,5 +48,3 @@ if __name__ == "__main__":
         currency = ptax.get_day_ptax(datetime.today().strftime("%m-%d-%Y"))
 
     print(currency)
-
-    
