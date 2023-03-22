@@ -1,5 +1,5 @@
 import holidays
-from typing import List, Dict, Iterable, Optional, Union
+from typing import Iterable, Optional, Union
 
 class HolidaysBr(holidays.BR):
 
