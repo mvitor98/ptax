@@ -2,7 +2,7 @@ from datetime import datetime, timedelta
 from typing import Iterable
 from brazilian_holidays import HolidaysBr
 from calendar import isleap
-from typing import Any, Union
+from typing import Union
 
 class DateValidator:
 

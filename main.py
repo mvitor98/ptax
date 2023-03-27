@@ -1,7 +1,6 @@
 from ptax import Ptax
 import argparse
 from date_validator import DateValidator
-from datetime import datetime
 
 
 parser = argparse.ArgumentParser("PTAX date selector. If no args, it will return the last PTAX recorded.")
