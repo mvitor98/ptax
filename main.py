@@ -28,23 +28,22 @@ if __name__ == "__main__":
     start_date = dates.get("start_date")
     end_date = dates.get("end_date")
     date = dates.get("date")
+ 
+    for _, v in dates.items():
+        if v:
+            dv.verify_date_input(v)
 
     if start_date and end_date:
-        if dv.verify_dates(start_date= start_date, end_date= end_date):
-            currency = ptax.get_period_ptax(start_date= start_date, end_date= end_date)
+        dv.verify_dates(start_date= start_date, end_date= end_date)
+        currency = ptax.get_period_ptax(start_date= start_date, end_date= end_date)
 
     elif date:
-        try:
-            if dv.verify_valid_date(date):
-                pass
-        except:
-            date = dv.last_business_day(date= date)
-        
-        currency = ptax.get_day_ptax(date)
+        currency = ptax.get_day_ptax(dv.last_business_day(date))
     
     else:
         parser.print_help()
         print("\n\n")
-        currency = ptax.get_day_ptax(datetime.today().strftime("%m-%d-%Y"))
+        date = dv.last_business_day()
+        currency = ptax.get_day_ptax(dv.last_business_day())
 
     print(currency)
